@@ -3,6 +3,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using QRCoder;
 using System.IO;
+using System.Data;
 
 namespace AwarderPro
 {
@@ -168,7 +169,7 @@ namespace AwarderPro
                         try
                         {
                             certificate.Save(saveFileDialog.FileName, format);
-                            MessageBox.Show("Изображение сохранено успешно!");
+                            MessageBox.Show("The image is saved successfully!");
                         }
                         catch (Exception ex)
                         {
@@ -201,7 +202,7 @@ namespace AwarderPro
 
         private void git_btn_Click(object sender, EventArgs e)
         {
-        string git_url = "https://github.com/strike11/AwarderPro";
+            string git_url = "https://github.com/strike11/AwarderPro";
             try
             {
                 var psi = new System.Diagnostics.ProcessStartInfo
@@ -215,6 +216,21 @@ namespace AwarderPro
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void btn_remove_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int rowIndex = db_table.SelectedRows[0].Index;
+                db_table.Rows.RemoveAt(rowIndex);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
         }
     }
 }

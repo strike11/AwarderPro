@@ -373,6 +373,7 @@
             btn_remove.Text = "Remove";
             btn_remove.UseVisualStyleBackColor = false;
             btn_remove.Visible = false;
+            btn_remove.Click += btn_remove_Click;
             // 
             // btn_add
             // 
@@ -543,9 +544,9 @@
         private System.Windows.Forms.Button git_btn;
         private System.Windows.Forms.Panel Certificate_construstor_pan;
         private System.Windows.Forms.Button gen_btn;
-        public System.Windows.Forms.PictureBox certificate_image;
         private System.Windows.Forms.TextBox input_desc;
         private System.Windows.Forms.Button addtodb_btn;
         private System.Windows.Forms.Button saveimg_btn;
+        public System.Windows.Forms.PictureBox certificate_image;
     }
 }
